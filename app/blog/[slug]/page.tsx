@@ -1,13 +1,13 @@
-import { formatDate } from '@/utils/helpers';
 import { getBlogPostBySlug, getAllBlogPosts } from '@/utils/blog';
 import { notFound } from 'next/navigation';
-import Link from 'next/link';
-import Image from 'next/image';
 import ClientBlogPostPage from './page.client';
 import { Metadata } from 'next';
 
-export function generateMetadata({ params }: { params: { slug: string } }): Metadata {
-  const post = getBlogPostBySlug(params.slug);
+export type paramsType = Promise<{ slug: string }>;
+
+export async function generateMetadata({ params }: { params: paramsType }): Promise<Metadata> {
+  const { slug } = await params;
+  const post = getBlogPostBySlug(slug);
   
   if (!post) {
     return {
@@ -37,8 +37,8 @@ export function generateMetadata({ params }: { params: { slug: string } }): Meta
   };
 }
 
-export default function BlogPostPage({ params }: { params: { slug: string } }) {
-  const { slug } = params;
+export default async function BlogPostPage({ params }: { params: paramsType }) {
+  const { slug } = await params;
   const post = getBlogPostBySlug(slug);
   
   // If post not found, return 404
@@ -63,7 +63,9 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
 }
 
 // Calculate estimated read time based on content length
-function calculateReadTime(content: string): string {
+function calculateReadTime(content: string | undefined): string {
+  if (!content) return '1 min read';
+  
   const wordsPerMinute = 200;
   const wordCount = content.split(/\s+/).length;
   const minutes = Math.max(1, Math.ceil(wordCount / wordsPerMinute));
