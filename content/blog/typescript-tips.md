@@ -7,7 +7,7 @@ categories:
   - Best Practices
   - Code Quality
 readTime: 10 min read
-coverImage: /images/blog/typescript.jpg
+coverImage: /images/blog/default-cover.png
 ---
 
 # TypeScript Tips for Better Code Quality

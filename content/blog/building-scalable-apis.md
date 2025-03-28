@@ -7,7 +7,7 @@ categories:
   - Backend
   - API Development
 readTime: 12 min read
-coverImage: /images/blog/nodejs-api.jpg
+coverImage: /images/blog/default-cover.png
 ---
 
 # Building Scalable APIs with Node.js and Express

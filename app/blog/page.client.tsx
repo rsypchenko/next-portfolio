@@ -7,7 +7,6 @@ import { useState, useRef, useEffect } from 'react';
 import { useTheme } from '@/context/ThemeContext';
 import { Calendar, Clock, ChevronDown, Search, Tag, ArrowRight } from 'lucide-react';
 import { BlogPost } from '@/types';
-import { filterBlogPostsByCategory, filterBlogPostsByQuery } from '@/utils/blog-client';
 
 // Client-side blog page component
 export default function BlogClientPage({

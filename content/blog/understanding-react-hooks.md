@@ -7,7 +7,7 @@ categories:
   - JavaScript
   - Web Development
 readTime: 8 min read
-coverImage: /images/blog/react-hooks.jpg
+coverImage: /images/blog/default-cover.png
 ---
 
 # Understanding React Hooks: A Deep Dive
