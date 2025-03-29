@@ -1,5 +1,6 @@
 import Hero from '@/components/Hero';
 import SkillsSection from '@/components/SkillsSection';
+import ValuesSection from '@/components/ValuesSection';
 import ContactCTA from '@/components/ContactCTA';
 import RecentBlogPosts from '@/components/RecentBlogPosts';
 import { getAllBlogPosts } from '@/utils/blog';
@@ -14,6 +15,10 @@ export default function Home() {
       
       <div id="skills">
         <SkillsSection />
+      </div>
+      
+      <div id="values" className="scroll-mt-20">
+        <ValuesSection />
       </div>
       
       <div id="blog" className="scroll-mt-20">
